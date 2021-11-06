@@ -8,7 +8,6 @@ foreach(file ${TEST_FILES})
         COMMAND echo ==========================================
         COMMAND echo Build ${barefile}.out
         COMMAND iverilog ${CMAKE_CURRENT_SOURCE_DIR}/${barefile}.v ${DEPEND_DIR} -o ${barefile}.out
-        COMMAND vvp ${barefile}.out
     )
     add_custom_target(${barefile} ALL DEPENDS ${barefile}.out)
 endforeach()

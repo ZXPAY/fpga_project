@@ -1,18 +1,21 @@
-`include "freq_div.v"
+`include "jkff.v"
 `timescale 1ns/1ns
 // frequency: 1/2ns
 module test_div;
 
 reg clk = 0;
-reg rst = 1'b1;
-wire clk_out;
+reg j = 1;
+reg k = 1;
+reg pr = 1;
+reg cl = 1;
+wire q, q_bar;
 
 initial begin
-	$dumpfile("test_div.vcd");
+	$dumpfile("test_jkff.vcd");
     $dumpvars;
 end
 
-freq_div clk_20ns(clk, clk_out, rst);
+jkff test_jkff(q, q_bar, j, k, clk, pr, cl);
 
 always #1 begin
 	clk = ~clk;

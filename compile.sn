@@ -1,0 +1,1 @@
+ninja -C build clean && ninja -C build
