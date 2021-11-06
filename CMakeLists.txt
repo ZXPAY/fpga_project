@@ -3,6 +3,8 @@ cmake_minimum_required(VERSION 3.16)
 project(fpga_project)
 
 
+add_subdirectory("doc")
+
 set(DEPEND_DIR
     ${CMAKE_SOURCE_DIR}
     ${CMAKE_SOURCE_DIR}/module
@@ -10,7 +12,7 @@ set(DEPEND_DIR
 
 
 file(GLOB VERILOG_SRC
-    ${CMAKE_SOURCE_DIR}/module/*.v
+    "${CMAKE_SOURCE_DIR}/module/*.v"
     )
 
 function (add_prefix var pfix lst)
